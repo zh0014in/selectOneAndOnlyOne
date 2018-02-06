@@ -1,0 +1,39 @@
+<html data-ng-app="app">
+
+<head>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="selectOneAndOnlyOne.js"></script>
+</head>
+
+<body data-ng-controller="demoController as vm">
+    <form name="demoForm" data-ng-submit="demoForm.$valid && vm.save();">
+        <div data-ng-messages="demoForm.demoSelect.$error" class="text-danger">
+            <p ng-message="selectOneAndOnlyOne">Please select one and only one item</p>
+        </div>
+
+        <div class="checkbox" data-ng-repeat="animal in vm.animals">
+            <label>
+                <input type="checkbox" name="demoSelect" data-ng-model="animal.Selected" select-one-and-only-one="vm.animals"> {{animal.name}}
+            </label>
+        </div>
+        <button type="submit" data-ng-disabled="!demoForm.$valid">Submit</button>
+    </form>
+    <script>
+        (function () {
+            angular.module('app', ['ngMessages', 'selectOneAndOnlyOnea'])
+                .controller('demoController', [function () {
+                    var vm = this;
+                    vm.animals = [{
+                        id: 1,
+                        name: 'cat'
+                    }, {
+                        id: 2,
+                        name: 'dog'
+                    }]
+                }])
+        })();
+    </script>
+</body>
+
+</html>

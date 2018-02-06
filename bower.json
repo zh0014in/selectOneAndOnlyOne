@@ -1,0 +1,27 @@
+{
+  "name": "selectOneAndOnlyOne",
+  "main": "selectOneAndOnlyOne.js",
+  "authors": [
+    "Zhang Mingmin <zh0014in@e.ntu.edu.sg>"
+  ],
+  "description": "angularjs directive select one and only one item from a list",
+  "keywords": [
+    "angularjs",
+    "select",
+    "list"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-messages": "^1.6.9",
+    "angular": "^1.6.9"
+  }
+}
